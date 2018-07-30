@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Tasks_1_3
 {
@@ -37,7 +34,7 @@ namespace Tasks_1_3
             Console.WriteLine("Your age is {0}.", age);
             Console.WriteLine("You are a {0}.", gender);
             Console.WriteLine("You live at {0}.", address);
-
+            Console.WriteLine();
             //Task 2////////////////////////////////////////////////////////////////////////////////////////////////////
 
             //Initalising variables
@@ -67,9 +64,9 @@ namespace Tasks_1_3
             float ansDiv = num1 / num2;
             Console.WriteLine("\n{0} / {1} = {2}", num1, num2, ansDiv);
 
+            Console.WriteLine();
 
 
-            
             //Task 3////////////////////////////////////////////////////////////////////////////////////////////////////
 
             //initalising variables
