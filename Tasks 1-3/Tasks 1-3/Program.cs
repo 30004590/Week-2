@@ -7,6 +7,41 @@ namespace Tasks_1_3
     {
         static void Main(string[] args)
         {
+
+            int choice = 0;
+
+            Console.WriteLine("==================================");
+            Console.WriteLine("===========TASKS 1 - 3============");
+            Console.WriteLine("==================================");
+            Console.WriteLine();
+            Console.WriteLine("===================================");
+            Console.WriteLine("Please select which task to access ");
+            Console.WriteLine("=============1. 2. 3.==============");
+            Console.WriteLine("Enter number here:");
+
+            choice = Convert.ToInt32(Console.ReadLine());
+
+            if (choice == 1)
+            {
+                Task1();
+            }
+
+            else if (choice == 2)
+            {
+                Task2();
+            }
+            else
+            {
+                Task3();
+            }
+
+
+           
+            
+
+        }
+        public static void Task1()
+        {
             //Task 1////////////////////////////////////////////////////////////////////////////////////////////////////
 
             //Initalising variables
@@ -35,6 +70,10 @@ namespace Tasks_1_3
             Console.WriteLine("You are a {0}.", gender);
             Console.WriteLine("You live at {0}.", address);
             Console.WriteLine();
+        }
+
+        public static void Task2()
+        {
             //Task 2////////////////////////////////////////////////////////////////////////////////////////////////////
 
             //Initalising variables
@@ -65,8 +104,10 @@ namespace Tasks_1_3
             Console.WriteLine("\n{0} / {1} = {2}", num1, num2, ansDiv);
 
             Console.WriteLine();
+        }
 
-
+        public static void Task3()
+        {
             //Task 3////////////////////////////////////////////////////////////////////////////////////////////////////
 
             //initalising variables
@@ -88,8 +129,8 @@ namespace Tasks_1_3
             Console.WriteLine("press enter to close program");
             Console.ReadLine();
 
-
-
         }
+
+
     }
 }
