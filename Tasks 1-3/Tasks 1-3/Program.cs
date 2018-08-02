@@ -7,35 +7,55 @@ namespace Tasks_1_3
     {
         static void Main(string[] args)
         {
+            Boolean restart = true;
 
-            int choice = 0;
-
-            Console.WriteLine("==================================");
-            Console.WriteLine("===========TASKS 1 - 3============");
-            Console.WriteLine("==================================");
-            Console.WriteLine();
-            Console.WriteLine("===================================");
-            Console.WriteLine("Please select which task to access ");
-            Console.WriteLine("=============1. 2. 3.==============");
-            Console.WriteLine("Enter number here:");
-
-            choice = Convert.ToInt32(Console.ReadLine());
-
-            if (choice == 1)
+            do
             {
-                Task1();
-            }
-
-            else if (choice == 2)
-            {
-                Task2();
-            }
-            else
-            {
-                Task3();
-            }
 
 
+                int choice = 0;
+
+                Console.WriteLine("==================================");
+                Console.WriteLine("===========TASKS 1 - 3============");
+                Console.WriteLine("==================================");
+                Console.WriteLine();
+                Console.WriteLine("===================================");
+                Console.WriteLine("Please select which task to access ");
+                Console.WriteLine("=============1. 2. 3.==============");
+                Console.WriteLine("Enter number here:");
+
+                choice = Convert.ToInt32(Console.ReadLine());
+
+                if (choice == 1)
+                {
+                    Task1();
+
+                }
+
+                else if (choice == 2)
+                {
+                    Task2();
+                   
+                }
+                else
+                {
+                    Task3();
+                    
+
+                }
+                
+                Console.WriteLine("\nDo You Want to run another task? Y/N");
+                
+                var check = Console.ReadLine().ToUpper();
+                if (check == "N")
+                {
+                    restart = false;
+                }
+                Console.Clear();
+
+
+
+            } while (restart);
            
             
 
@@ -69,7 +89,10 @@ namespace Tasks_1_3
             Console.WriteLine("Your age is {0}.", age);
             Console.WriteLine("You are a {0}.", gender);
             Console.WriteLine("You live at {0}.", address);
-            Console.WriteLine();
+            
+
+            return;
+            
         }
 
         public static void Task2()
@@ -77,33 +100,46 @@ namespace Tasks_1_3
             //Task 2////////////////////////////////////////////////////////////////////////////////////////////////////
 
             //Initalising variables
-            float num1 = 0, num2 = 0;
+            float num1 = 0, num2 = 0, ans = 0;
+            string choice;
 
             //Inputs
             Console.WriteLine("Please type in first number:");
             num1 = float.Parse(Console.ReadLine());
             Console.WriteLine("Please type in second number:");
             num2 = float.Parse(Console.ReadLine());
+            Console.WriteLine("Please select which operator to use: +, -, *, /");
+            choice = Console.ReadLine();
 
-            Console.WriteLine("Calculations...");
+            switch (choice)
+            {
+                case "+":
+                    ans = num1 + num2;
+                    break;
 
-            //Addition output
-            float ansAdd = num1 + num2;
-            Console.WriteLine("\n{0} + {1} = {2}", num1, num2, ansAdd);
+                case "-":
+                    ans = num1 - num2;
+                    break;
 
-            //Subtraction output
-            float ansSub = num1 - num2;
-            Console.WriteLine("\n{0} - {1} = {2}", num1, num2, ansSub);
+                case "*":
+                    ans = num1 * num2;
+                    break;
 
-            //Multiplication output
-            float ansMul = num1 * num2;
-            Console.WriteLine("\n{0} * {1} = {2}", num1, num2, ansMul);
+                case "/":
+                    ans = num1 / num2;
+                    break;
+                default:
+                    break;
+            }
 
-            //Division output
-            float ansDiv = num1 / num2;
-            Console.WriteLine("\n{0} / {1} = {2}", num1, num2, ansDiv);
+            Console.WriteLine("Calculating...");
 
-            Console.WriteLine();
+            //Calculation output
+            
+            Console.WriteLine("\n{0} {1} {2} = {3}", num1, choice, num2, ans);
+
+
+            return;
         }
 
         public static void Task3()
@@ -125,9 +161,8 @@ namespace Tasks_1_3
             //Another Method...
             Console.WriteLine("\nHello {0}" + " {1}", Fname, Lname);
 
-            Console.WriteLine();
-            Console.WriteLine("press enter to close program");
-            Console.ReadLine();
+            
+            return;
 
         }
 
