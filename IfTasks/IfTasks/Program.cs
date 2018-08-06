@@ -12,6 +12,14 @@ namespace IfTasks
         {
             Boolean restart = true;
 
+            /*Boolean restart = true;
+            do
+            {
+                restart = false;
+            } while (restart); 
+            */
+
+
             do
             {
 
@@ -19,7 +27,7 @@ namespace IfTasks
                 Console.WriteLine("===================================");
                 Console.WriteLine("Please select which task to access ");
                 Console.WriteLine("===================================");
-                Console.WriteLine("1. 2. 3. 4. 5.");
+                Console.WriteLine("1. 2. 3. 4. 5. 6.");
 
                 Console.WriteLine("Enter number here:");
 
@@ -139,25 +147,38 @@ namespace IfTasks
 
         public static void task3()
         {
+            Boolean restart = true;
             int grade = 0;
             Console.WriteLine("=====Grades=====");
-            Console.WriteLine("\nPlease Enter final score:");
-            grade = Int32.Parse(Console.ReadLine());
+
+
+            do {
+                Console.WriteLine("\nPlease Enter final score:");
+                grade = 0;
+                grade = Int32.Parse(Console.ReadLine());
 
 
 
-            if (grade > 100)
-            {
-                Console.WriteLine("Warning {0} is larger than maximum", grade);
-            }
+                if (grade > 100)
+                {
+                    Console.WriteLine("\nWarning {0} is larger than maximum", grade);
+                    
+                }
 
-            else if (grade < 0)
-            {
-                Console.WriteLine("Warning {0} is smaller than minimum", grade);
-            }
+                else if (grade < 0)
+                {
+                    Console.WriteLine("\nWarning {0} is smaller than minimum", grade);
+                }
 
-        
-            else if (grade >= 90)
+                else
+                {
+                    restart = false;
+                }
+
+            } while (restart); 
+
+
+            if (grade >= 90)
             {
                 Console.WriteLine("Grade: A+");
             }
@@ -217,36 +238,48 @@ namespace IfTasks
         }
         public static void task5()
         {
-            int pin1 = 0;
-            int pin2 = 0;
+            Boolean restart = true;
+
+            int pin1;
+            int pin2;
             Console.WriteLine("\nWelcome To The Vault");
-            Console.WriteLine("\nEnter 4 Digit Code Here:");
 
-            pin1 = Int32.Parse(Console.ReadLine());
+            do {
+                pin1 = 0;
+                pin2 = 0;
+                Console.WriteLine("\nEnter 4 Digit Code Here:");
 
-            if (pin1 <= 1000 || pin1 >= 9999)
-            {
-                Console.WriteLine("\nERROR: CODE NOT IN RIGHT PERAMETERS");
-                Console.WriteLine("SYSTEM LOCK");
-            }
+                pin1 = Int32.Parse(Console.ReadLine());
 
-            else
-            {
-                Console.WriteLine("\nPlease Enter PIN Again:");
-                pin2 = Int32.Parse(Console.ReadLine());
-
-                if (pin1 == pin2)
+                if (pin1 <= 1000 || pin1 >= 9999)
                 {
-                    Console.WriteLine("\nYour PIN Is Set");
+                    Console.WriteLine("\nERROR: CODE NOT IN RIGHT PERAMETERS");
+                    Console.WriteLine("SYSTEM LOCK");
                 }
 
                 else
                 {
-                    Console.WriteLine("\nERROR: PIN's NOT THE SAME");
-                    Console.WriteLine("SYSTEM LOCK");
+                    restart = false;
                 }
 
-            }
+            } while (restart);
+
+
+              Console.WriteLine("\nPlease Enter PIN Again:");
+              pin2 = Int32.Parse(Console.ReadLine());
+
+              if (pin1 == pin2)
+              {
+                  Console.WriteLine("\nYour PIN Is Set");
+              }
+
+              else
+              {
+                  Console.WriteLine("\nERROR: PIN's NOT THE SAME");
+                  Console.WriteLine("SYSTEM LOCK");
+              }
+
+            
 
 
 
