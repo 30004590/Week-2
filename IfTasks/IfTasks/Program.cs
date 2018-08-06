@@ -19,7 +19,7 @@ namespace IfTasks
                 Console.WriteLine("===================================");
                 Console.WriteLine("Please select which task to access ");
                 Console.WriteLine("===================================");
-                Console.WriteLine("1. 2.");
+                Console.WriteLine("1. 2. 3. 4. 5.");
 
                 Console.WriteLine("Enter number here:");
 
@@ -98,7 +98,7 @@ namespace IfTasks
                 Console.WriteLine("\n{0} is less than {1}", num1, num2);
 
             }
-            return;
+            
 
             //{0:0.0}
         }
@@ -133,7 +133,7 @@ namespace IfTasks
 
             }
 
-            return;
+            
 
         }
 
@@ -196,13 +196,58 @@ namespace IfTasks
         }
         public static void task4()
         {
+            int userNum = 0;
+            Console.WriteLine("\nIs Your Number Odd Or Even?");
+            Console.WriteLine("\nEnter Number");
+            userNum = Int32.Parse(Console.ReadLine());
 
+            userNum = userNum % 2;
+            
+            if (userNum == 0)
+            {
+                Console.WriteLine("The Number is Even");
+            }
 
+            else
+            {
+                Console.WriteLine("The number is Odd");
+            }
 
 
         }
         public static void task5()
         {
+            int pin1 = 0;
+            int pin2 = 0;
+            Console.WriteLine("\nWelcome To The Vault");
+            Console.WriteLine("\nEnter 4 Digit Code Here:");
+
+            pin1 = Int32.Parse(Console.ReadLine());
+
+            if (pin1 <= 1000 || pin1 >= 9999)
+            {
+                Console.WriteLine("\nERROR: CODE NOT IN RIGHT PERAMETERS");
+                Console.WriteLine("SYSTEM LOCK");
+            }
+
+            else
+            {
+                Console.WriteLine("\nPlease Enter PIN Again:");
+                pin2 = Int32.Parse(Console.ReadLine());
+
+                if (pin1 == pin2)
+                {
+                    Console.WriteLine("\nYour PIN Is Set");
+                }
+
+                else
+                {
+                    Console.WriteLine("\nERROR: PIN's NOT THE SAME");
+                    Console.WriteLine("SYSTEM LOCK");
+                }
+
+            }
+
 
 
 
@@ -210,6 +255,38 @@ namespace IfTasks
         }
         public static void task6()
         {
+            
+            string char1, char2, char3;
+            int i = 0;
+
+            Console.WriteLine("\nWelcome to the Palindrome Scanner");
+            Console.WriteLine("\nPlease think of a 3 letter word...");
+
+            Console.WriteLine("Please Enter the first letter of the word");
+            char1 = Console.ReadLine();
+
+            Console.WriteLine("Please Enter the second letter of the word");
+            char2 = Console.ReadLine();
+
+            Console.WriteLine("Please Enter the third letter of the word");
+            char3 = Console.ReadLine();
+
+            if (char2 != "a, e, o, u")
+            {
+                Console.WriteLine("Not A Real Word");
+            }
+
+            else if (char1 == char3)
+            {
+                Console.WriteLine("That is a Palindrome");
+            }
+
+            else
+            {
+                Console.WriteLine("Not a Palindrome");
+            }
+
+
 
 
 
